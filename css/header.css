@@ -1,0 +1,222 @@
+/* header */
+
+#menu {
+    position: fixed;
+    width: 100%;
+    z-index: 2;
+}
+
+/* Бургер меню */
+
+#menu_icon_box {
+    position: relative;
+    width: 100%;
+    height: 65px;
+    transition: 0s;
+    transition-delay: .4s;
+    background: var(--main);
+}
+
+#menu_icon_box.open {
+    width: 100%;
+}
+
+#menu_icon {
+    position: absolute;
+    top: 0%;
+    right: 0%;
+    width: 45px;
+    height: 35px;
+    margin: 15px;
+    cursor: pointer;
+    transition: 0s;
+    transition-delay: .4s;
+}
+
+#menu_icon>i {
+    position: absolute;
+    display: block;
+    height: 12%;
+    right: 0;
+    background: var(--orangeKorvus);
+    transition: opacity .2s;
+    animation-duration: 1.4s;
+    animation-fill-mode: forwards;
+}
+
+/* При наведении */
+
+#menu_icon:hover i {
+    opacity: 60%;
+}
+
+/* Открыто (каждая полоса)*/
+
+#menu_icon_box.open #menu_icon .menu_icon_top {
+    animation-delay: 0s;
+    animation-name: top_open;
+}
+
+#menu_icon_box.open #menu_icon .menu_icon_middle {
+    animation-delay: .1s;
+    animation-name: middle_open;
+}
+
+#menu_icon_box.open #menu_icon .menu_icon_bottom {
+    animation-delay: .2s;
+    animation-name: bottom_open;
+}
+
+/* Закрыто (каждая полоса)*/
+
+#menu_icon_box.off #menu_icon .menu_icon_top {
+    width: 100%;
+    right: 0;
+    animation-delay: .2s;
+    animation-name: top_off;
+}
+
+#menu_icon_box.off #menu_icon .menu_icon_middle {
+    width: 60%;
+    right: 40%;
+    animation-delay: .1s;
+    animation-name: middle_off;
+}
+
+#menu_icon_box.off #menu_icon .menu_icon_bottom {
+    width: 35%;
+    right: 65%;
+    animation-delay: 0s;
+    animation-name: bottom_off;
+}
+
+/* При заходе на сайт (каждая полоса)*/
+
+.menu_icon_top {
+    top: 0;
+    right: 0;
+    width: 35%;
+}
+
+.menu_icon_middle {
+    top: 40%;
+    right: 0;
+    width: 60%;
+}
+
+.menu_icon_bottom {
+    top: 80%;
+    right: 0;
+    width: 100%;
+}
+
+/* Открыто (каждая полоса)*/
+
+@keyframes top_open {
+    30% {
+        right: -100%;
+        width: 0%;
+    }
+    100% {
+        width: 100%;
+        right: 0;
+    }
+}
+
+@keyframes middle_open {
+    30% {
+        right: -100%;
+        width: 0%;
+        background: var(--orangeKorvus)
+    }
+    100% {
+        width: 60%;
+        right: 40%;
+    }
+}
+
+@keyframes bottom_open {
+    30% {
+        right: -100%;
+        width: 0%;
+        background: var(--orangeKorvus)
+    }
+    100% {
+        width: 35%;
+        right: 65%;
+    }
+}
+
+/* Закрыто (каждая полоса)*/
+
+@keyframes top_off {
+    0% {
+        width: 100%;
+        right: 0;
+    }
+    30% {
+        right: 200%;
+        width: 0%;
+    }
+    31% {
+        right: -100%;
+        width: 0%;
+        background: none;
+    }
+    100% {
+        right: 0;
+        width: 35%;
+    }
+}
+
+@keyframes middle_off {
+    0% {
+        width: 60%;
+        right: 40%;
+    }
+    30% {
+        right: 200%;
+        width: 0%;
+    }
+    31% {
+        right: -100%;
+        width: 0%;
+        background: none;
+    }
+    100% {
+        right: 0;
+        width: 60%;
+    }
+}
+
+@keyframes bottom_off {
+    0% {
+        width: 35%;
+        right: 65%;
+    }
+    30% {
+        right: 200%;
+        width: 0%;
+    }
+    31% {
+        right: -100%;
+        width: 0%;
+        background: none;
+    }
+    100% {
+        right: 0;
+        width: 100%;
+    }
+}
+
+/* Содержимое бургер меню */
+
+#menu_box {
+    border-top: 2px solid var(--orangeKorvus);
+    border-bottom: 2px solid var(--orangeKorvus);
+    width: 0;
+    transition: .9s;
+    transition-delay: .2s;
+    overflow: hidden;
+    background: var(--main);
+}

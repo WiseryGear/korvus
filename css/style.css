@@ -1,0 +1,240 @@
+:root{
+    --main: rgb(37, 37, 37);
+    --secondary1: rgb(48, 48, 48);
+    --secondary2: rgb(51, 51, 51);
+    --whiteKorvus: rgb(255, 255, 255);
+    --orangeKorvus: rgb(239, 125, 0);
+}
+footer,header,section{
+    background-color: var(--main);
+    color: var(--whiteKorvus);
+}
+
+/* ***** Текст ***** */
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap'); /* Импортируем Roboto */
+body{
+    font-family: 'Roboto', sans-serif; /* Подключаем Roboto, иначе подбор шрифта браузером */
+}
+
+/* Текст (Заголовки) */
+.textBigOrange{
+    color: var(--orangeKorvus);
+    font-size: clamp(36px, 4vw, 64px);
+}
+
+/* Текст (огромный) */
+.textLargeOrange{
+    color: var(--orangeKorvus);
+    font-size: clamp(32px, 4vw, 46px);
+}
+
+/* Текст (большой) */
+.textAverageOrange{
+    color: var(--orangeKorvus);
+    font-size: clamp(24px, 2.5vw, 32px);
+}
+
+/* Текст (средний) */
+.textSmallOrange{
+    color: var(--orangeKorvus);
+    font-size: clamp(18px, 1.5vw, 22px);
+}
+.textSmall{
+    font-size: clamp(18px, 1.5vw, 22px);
+}
+
+/* Текст (маленький) */
+.textTiny{
+    font-size: clamp(16px, 1.5vw, 20px);
+}
+
+/* ***** Ссылки ***** */
+
+a {
+    color: var(--whiteKorvus);
+    text-decoration: none; /* Убираем подчёркивание у ссылок */
+    transition: color 0.5s; /* Анимация изменения цвета при наведении */
+}
+a:visited {
+    color: var(--whiteKorvus); /* Цвет посещённой ссылки */
+} 
+a:hover {
+    color: var(--orangeKorvus); /* Цвет ссылки при наведении */
+}
+
+/* ***** Анимация появления элементов***** */
+
+.element-animation{
+    opacity: 0;
+}
+.element-animation.element-show{
+    opacity: 1;
+    transition: opacity 3s;
+}
+
+/* Вниз (Анимация)*/
+.amimation-top.element-animation{
+    opacity: 0;
+    -webkit-transform: translateY(-13px);
+    -ms-transform: translateY(-13px);
+    transform: translateY(-13px);
+    -webkit-transition: all 1.5s;
+    -o-transition: all 1.5s;
+    transition: all 1.5s;
+}
+.amimation-top.element-animation.element-show{
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+}
+
+/* Вправо (Анимация)*/
+.amimation-right.element-animation{
+    opacity: 0;
+    -webkit-transform: translateX(-13px);
+    -ms-transform: translateX(-13px);
+    transform: translateX(-13px);
+    -webkit-transition: all 1.5s;
+    -o-transition: all 1.5s;
+    transition: all 1.5s;
+}
+.amimation-right.element-animation.element-show{
+    opacity: 1;
+    -webkit-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0);
+}
+
+/* Вверх (Анимация)*/
+.amimation-bottom.element-animation{
+    opacity: 0;
+    -webkit-transform: translateY(13px);
+    -ms-transform: translateY(13px);
+    transform: translateY(13px);
+    -webkit-transition: all 1.5s;
+    -o-transition: all 1.5s;
+    transition: all 1.5s;
+}
+.amimation-bottom.element-animation.element-show{
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+}
+
+/* Влево (Анимация)*/
+.amimation-left.element-animation{
+    opacity: 0;
+    -webkit-transform: translateX(13px);
+    -ms-transform: translateX(13px);
+    transform: translateX(13px);
+    -webkit-transition: all 1.5s;
+    -o-transition: all 1.5s;
+    transition: all 1.5s;
+}
+.amimation-left.element-animation.element-show{
+    opacity: 1;
+    -webkit-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0);
+}
+
+/* ***** Секции ***** */
+
+/* Максимальная ширина для container-fluid */
+.container-fluid-max{
+    max-width: 2000px;
+}
+
+/* Цвета секций */
+.sectColorSecondary1{
+    background-color: var(--secondary1);
+}
+.sectColorSecondary2{
+    background-color: var(--secondary2);
+}
+.sectColorMain{
+    background-color: var(--main);
+}
+
+/* ***** секция (Лид) ***** */
+
+.caseLead{
+    height: 100vh;
+}
+.bgLead{
+    background-image: url("/img/background/lead.png");
+    background-size: cover;
+}
+/* ***** секция (Визитка) ***** */
+
+.bgDevelopment{
+    background-image: url("/img/background/development.jpg");
+    background-size: cover;
+}
+.bgDevelopmentText{
+    background-color: var(--orangeKorvus);
+}
+
+/* Переформирование класса бутстрапа */
+.btn-outline-primary,.btn-outline-primary:hover{
+    color: var(--orangeKorvus);
+    background-color: var(--main);
+    border-color: var(--orangeKorvus);
+}
+.btn-outline-primary:active{
+    color: var(--main);
+    background-color: var(--orangeKorvus) !important;
+    border-color: var(--main) !important;
+}
+
+/* ***** секция (Примеры) ***** */
+
+.exampleImg{
+    height: 400px;
+    object-fit: cover;
+}
+
+/* Анимация картинки */
+.scale {
+    overflow: hidden; /* Скрываем всё за контуром */
+}
+.scale img {
+    transition: 1s; /* Время эффекта */
+}
+.scale img:hover {
+    transform: scale(1.2); /* Увеличиваем масштаб */
+}
+
+/* ***** секция (Услуги) ***** */
+
+.bgPossibilities{
+    background-image: url("/img/background/possibilities.png");
+    background-size: cover;
+}
+
+/* ***** страница (Панель редактора) ***** */
+
+
+
+/* ***** Медиа запросы ***** */
+
+/* Стилизация кнопки под маленькие экраны из секции (Лид) */
+@media (hover: none){
+    .btn-outline-primary:active{
+        color: var(--main);
+        background-color: var(--orangeKorvus) !important;
+        border-color: var(--main) !important;
+    }
+}
+
+/* Стилизация объекта под маленькие экраны из секции (Визитка) */
+@media (max-width: 1400px) {
+    .bgDevelopment{
+        background-image: url("/img/background/development.jpg");
+        background-size: cover;
+        height: 500px;
+    }
+};
