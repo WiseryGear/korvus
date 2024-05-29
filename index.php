@@ -1,4 +1,10 @@
-<?php require_once $_SERVER['DOCUMENT_ROOT'] . '/config.php'; ?>
+<?php
+require_once $_SERVER['DOCUMENT_ROOT'] . '/config.php';
+require_once BASE_PATH . 'classes/News.php';
+
+use classes\News;
+
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -302,23 +308,25 @@
             <div class="container">
                 <div class="swiper py-5 p-md-5">
                     <div class="swiper-wrapper">
-                        <div data-hash="news1" class="swiper-slide">
-                            <div class="d-flex flex-wrap caseContentNews">
-                                <div class="d-flex col-12 col-lg-6 col-xl-4">
-                                    <img src="/img/news/test.jpg" alt="..." class="object-fit-cover h-100 w-100">
-                                </div>
-                                <div class="d-flex flex-wrap col-12 col-lg-6 col-xl-8">
-                                    <span class="mx-3 textAverageOrange">Крутая новость</span>
-                                    <span class="mx-3 textSmall">"Типография 'Корвус' представляет уникальную возможность для всех желающих создать индивидуальный и неповторимый дизайн своих печатных продуктов! С нами вы можете заказать печать на любых поверхностях, от бумаги до ткани, и быть уверенными в качестве и оригинальности каждого экземпляра. Доверьте нам свои идеи – и мы превратим их в реальность!"</span>
-                                    <div class="d-flex justify-content-end col-12">
-                                        <div class="d-flex align-self-end me-3">
-                                            <span class="textTiny">14.07.2024</span>
+                        <?php foreach (News::findAll() as $news): ?>
+                            <div data-hash="news<?= $news->getId()?>" class="swiper-slide">
+                                <div class="d-flex flex-wrap caseContentNews">
+                                    <div class="d-flex col-12 col-lg-6 col-xl-4">
+                                        <img src="/img/news/<?= $news->getPhoto()?>" alt="..." class="object-fit-cover h-100 w-100">
+                                    </div>
+                                    <div class="d-flex flex-wrap col-12 col-lg-6 col-xl-8">
+                                        <span class="mx-3 textAverageOrange"><?= $news->getTitle()?></span>
+                                        <span class="mx-3 textSmall"><?= $news->getDescription()?></span>
+                                        <div class="d-flex justify-content-end col-12">
+                                            <div class="d-flex align-self-end me-3">
+                                                <span class="textTiny"><?= $news->getCreatedAt()?></span>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div data-hash="news2" class="swiper-slide">
+                        <?php endforeach; ?>
+                        <!-- <div data-hash="news2" class="swiper-slide">
                             <div class="d-flex flex-wrap caseContentNews">
                                 <div class="d-flex col-12 col-lg-6 col-xl-4">
                                     <img src="/img/news/test.jpg" alt="..." class="object-fit-cover h-100 w-100">
@@ -397,7 +405,7 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
 
                     <!-- Буллеты/Прогрессбар -->

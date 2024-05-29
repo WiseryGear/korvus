@@ -47,7 +47,7 @@ if (!isset($_SESSION['user']['id'])){
                             </thead>
                             <tbody>
                                 <tr>
-                                    <form action="/handlers/formHandler.php" method="POST">
+                                    <form action="/handlers/formHandler.php" method="POST" enctype="multipart/form-data">
                                         <th scope="row">id</th>
                                         <td><input type="file" name="photo" class="form-control"></td>
                                         <td><input type="text" name="title" class="form-control"></td>
@@ -60,15 +60,13 @@ if (!isset($_SESSION['user']['id'])){
                                     foreach ($news as $value) {
                                         $id          = $value->getId();
                                         $title       = $value->getTitle();
-                                        $description = ($value->getDescription()) ? $value->getDescription() : 'Описание отсутствует';
-                                        $photo       = ($value->getPhoto()) ? $value->getPhoto() : '/img/1x1.png';
-                                        // $description = $value->getDescription();
-                                        // $photo       = $value->getPhoto();
+                                        $description = $value->getDescription();
+                                        $photo       = $value->getPhoto();
                                 ?>
                                     <tr>
-                                        <form action="/handlers/formHandler.php" method="POST">
+                                        <form action="/handlers/formHandler.php" method="POST" enctype="multipart/form-data">
                                             <th scope="row"><?= $id ?></th>
-                                            <td><input type="file" name="photo" value="<?= $photo ?>" class="form-control"></td>
+                                            <td><input type="file" name="photo" class="form-control"> <?= $photo ?> </td>
                                             <td><input type="text" name="title" value="<?= $title ?>" class="form-control"></td>
                                             <td><input type="text" name="description" value="<?= $description ?>" class="form-control"></td>
                                             <input type="hidden" name="id" value="<?= $id ?>" name="id">

@@ -8,8 +8,9 @@ class Db // Объявление класса
 {
     public $db; // Соединение с бд
 
-    public function __construct() { // Инициализация объекта
-        $config = require_once("../config/db.php"); // Запись конфига в переменную
+    public function __construct()
+    { // Инициализация объекта
+        $config = require_once ($_SERVER['DOCUMENT_ROOT'] . "/config/db.php"); // Запись конфига в переменную
         $this->db = new PDO($config['dsn'], $config['username'], $config['password']); // Соединение с бд
     }
 

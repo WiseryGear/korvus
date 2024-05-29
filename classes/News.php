@@ -10,7 +10,7 @@ use lib\Db;
 class NullNews extends News
 {
     public function __construct() {
-        parent::__construct(0, '', '', '');
+        parent::__construct(0, '', '', '', '');
     }
 
     public function isNull(): bool 
@@ -26,12 +26,14 @@ class News
     protected string $title;
     protected string $description;
     protected string $photo;
+    protected string $created_at;
 
-    protected function __construct(int $id, string $title, string $description, string $photo) {
+    protected function __construct(int $id, string $title, string $description, string $photo, string $created_at) {
         $this->id = $id;
         $this->title = $title;
         $this->description = $description;
         $this->photo = $photo;
+        $this->created_at = $created_at;
     }
 
     private static function initDatabase(): void
@@ -52,7 +54,7 @@ class News
         
         if ($news) {
             $news = $news[0];
-            return new static($news['id'], $news['title'], $news['description'], $news['photo']);
+            return new static($news['id'], $news['title'], $news['description'], $news['photo'], $news['created_at']);
         }
 
         return new NullNews;
@@ -82,7 +84,7 @@ class News
         $array = [];
 
         foreach ($news as $value) {
-            $array[] = new static($value['id'], $value['title'], $value['description'], $value['photo']);
+            $array[] = new static($value['id'], $value['title'], $value['description'], $value['photo'], $value['created_at']);
         }
 
         return $array;
@@ -146,4 +148,9 @@ class News
     // {
     //     Product::$db->query('UPDATE `news` SET `title` = COALESCE(:title, `title`) WHERE `id` = :id;', ['title' => $value]);
     // }
+
+    public function getCreatedAt(): string
+    {
+        return $this->created_at;
+    }
 }
