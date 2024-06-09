@@ -32,20 +32,20 @@ use classes\News;
                     </a>
                 </div>
                 <div id="menu_box" class="d-flex justify-content-sm-around">
-                    <a href="#sec_info">
-                        <span class="textTiny">Визитка</span>
+                    <a href="#sec_info" class="textTiny">
+                        Визитка
                     </a>
-                    <a href="#sec_service">
-                        <span class="textTiny">Услуги</span>
+                    <a href="#sec_service" class="textTiny">
+                        Услуги
                     </a>
-                    <a href="#sec_example">
-                        <span class="textTiny">Примеры</span>
+                    <a href="#sec_example" class="textTiny">
+                        Примеры
                     </a>
-                    <a href="#sec_news">
-                        <span class="textTiny">Новости</span>
+                    <a href="#sec_news" class="textTiny">
+                        Новости
                     </a>
-                    <a href="#sec_history">
-                        <span class="textTiny">История</span>
+                    <a href="#sec_history" class="textTiny">
+                        История
                     </a>
                 </div>
             </nav>
@@ -64,13 +64,41 @@ use classes\News;
                             Мы проектируем, создаем, печатаем: полный цикл производства в одном месте.
                         </div>
                         <div class="mt-1">
-                            <button href="#" class="btn btn-lg btn-outline-primary textSmall">Начать сотрудничество</button>
+                            <button type="button" class="btn btn-lg btn-outline-primary textSmall" data-bs-toggle="modal" data-bs-target="#Cooperation">Начать сотрудничество</button>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
+        <!-- Модальное окно -->
+        <div class="modal fade" id="Cooperation" tabindex="-1" aria-labelledby="CooperationLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <form action="/handlers/formCooperationUp.php" method="POST" class="modal-content sectColorMain element-animation amimation-bottom">
+                    <div class="modal-header d-flex flex-column">
+                        <span class="modal-title textAverageOrangeModal text-center" id="CooperationLabel">НАЧАТЬ СОТРУДНИЧЕСТВО</span>
+                        <span class="modal-title textSmallModal text-center" id="CooperationLabel">Оставьте ваши данные и мы обязательно свяжемся с вами!</span>
+                    </div>
 
+                    <div class="modal-body d-flex flex-column">
+                        <div class="input-group input-group-lg">
+                            <input type="text" name="emailCooperation" class="form-control mb-3" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg" placeholder="Почта" required>
+                        </div>
+                        <div class="input-group input-group-lg">
+                            <input type="text" name="fullNameCooperation" class="form-control mb-3" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg" placeholder="ФИО" required>
+                        </div>
+                        <div class="input-group input-group-lg">
+                            <input type="text" name="phoneCooperation" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg" placeholder="Телефон" required>
+                        </div>
+                    </div>
+
+                    <div class="modal-footer d-flex justify-content-between">
+                        <button type="submit" name="Cooperation" value="CooperationUp" class="btn btn-lg btn-outline-primary textSmall">ОТПРАВИТЬ</button>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        
         <!-- Визитка -->
 
         <section id="sec_info" class="sectColorSecondary2">
@@ -134,21 +162,21 @@ use classes\News;
                                     <path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"/>
                                     <path d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/>
                                 </svg>
-                                <span class="textSmall">Горячее тиснение</span>
+                                Горячее тиснение
                             </a>
                             <a class="textSmall m-2" target="_blank" href="https://ru.wikipedia.org/wiki/%D0%A3%D0%BB%D1%8C%D1%82%D1%80%D0%B0%D1%84%D0%B8%D0%BE%D0%BB%D0%B5%D1%82%D0%BE%D0%B2%D0%B0%D1%8F_%D0%BF%D0%B5%D1%87%D0%B0%D1%82%D1%8C">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-info-square" viewBox="0 0 16 16">
                                     <path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"/>
                                     <path d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/>
                                 </svg>
-                                <span class="textSmall">УФ-лак</span>
+                                УФ-лак
                             </a>           
                             <a class="textSmall m-2" target="_blank" href="https://ru.wikipedia.org/wiki/%D0%92%D1%8B%D1%80%D1%83%D0%B1%D0%BA%D0%B0_(%D0%B7%D0%BD%D0%B0%D1%87%D0%B5%D0%BD%D0%B8%D1%8F)">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-info-square" viewBox="0 0 16 16">
                                     <path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"/>
                                     <path d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/>
                                 </svg>
-                                <span class="textSmall">Вырубка</span>
+                                Вырубка
                             </a>
                         </div>
                         <div class="d-flex flex-column p-2">
@@ -157,21 +185,21 @@ use classes\News;
                                     <path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"/>
                                     <path d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/>
                                 </svg>
-                                <span class="textSmall">Конгрев</span>
+                                Конгрев
                             </a>
                             <a class="textSmall m-2" target="_blank" href="https://ru.wikipedia.org/wiki/%D0%9B%D0%B0%D0%BC%D0%B8%D0%BD%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5_%D0%BF%D0%BE%D0%BB%D0%B8%D0%B3%D1%80%D0%B0%D1%84%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%BE%D0%B9_%D0%BF%D1%80%D0%BE%D0%B4%D1%83%D0%BA%D1%86%D0%B8%D0%B8">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-info-square" viewBox="0 0 16 16">
                                     <path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"/>
                                     <path d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/>
                                 </svg>
-                                <span class="textSmall">Ламинация</span>
+                                Ламинация
                             </a>
                             <a class="textSmall m-2" target="_blank" href="https://ru.wikipedia.org/wiki/%D0%A4%D0%B0%D0%BB%D1%8C%D1%86%D0%BE%D0%B2%D0%BA%D0%B0">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-info-square" viewBox="0 0 16 16">
                                     <path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"/>
                                     <path d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/>
                                 </svg>
-                                <span class="textSmall">Фальцевальная склеивающая линия</span>
+                                Фальцевальная склеивающая линия
                             </a>
                         </div>
                     </div>
@@ -193,21 +221,21 @@ use classes\News;
                                     <path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"/>
                                     <path d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/>
                                 </svg>
-                                <span class="textSmall">Печать</span>
+                                Печать
                             </a>
                             <a class="textSmall m-3" target="_blank" href="https://ru.wikipedia.org/wiki/%D0%92%D1%8B%D1%80%D1%83%D0%B1%D0%BA%D0%B0_(%D0%B7%D0%BD%D0%B0%D1%87%D0%B5%D0%BD%D0%B8%D1%8F)">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-info-square" viewBox="0 0 16 16">
                                     <path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"/>
                                     <path d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/>
                                 </svg>
-                                <span class="textSmall">Резка</span>
+                                Резка
                             </a>
                             <a class="textSmall m-3" target="_blank" href="https://ru.wikipedia.org/wiki/%D0%A4%D0%B0%D0%BB%D1%8C%D1%86%D0%BE%D0%B2%D0%BA%D0%B0">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-info-square" viewBox="0 0 16 16">
                                     <path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"/>
                                     <path d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/>
                                 </svg>
-                                <span class="textSmall">Фальцовка</span>
+                                Фальцовка
                             </a>
                         </div>
                     </div>
@@ -326,86 +354,6 @@ use classes\News;
                                 </div>
                             </div>
                         <?php endforeach; ?>
-                        <!-- <div data-hash="news2" class="swiper-slide">
-                            <div class="d-flex flex-wrap caseContentNews">
-                                <div class="d-flex col-12 col-lg-6 col-xl-4">
-                                    <img src="/img/news/test.jpg" alt="..." class="object-fit-cover h-100 w-100">
-                                </div>
-                                <div class="d-flex flex-wrap col-12 col-lg-6 col-xl-8">
-                                    <span class="mx-3 textAverageOrange">Крутая новость</span>
-                                    <span class="mx-3 textSmall">"Типография 'Корвус' рада объявить о запуске новой услуги - высококачественной цифровой печати! Теперь наши клиенты могут заказывать быструю и точную печать на различных материалах, от визиток до баннеров, с использованием самых современных технологий. Мы гарантируем отличное качество и быстрые сроки выполнения заказов. Обращайтесь в 'Корвус' – и ваша печать всегда будет уникальной и профессиональной!"</span>
-                                    <div class="d-flex justify-content-end col-12">
-                                        <div class="d-flex align-self-end me-3">
-                                            <span class="textTiny">14.07.2024</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div data-hash="news3" class="swiper-slide">
-                            <div class="d-flex flex-wrap caseContentNews">
-                                <div class="d-flex col-12 col-lg-6 col-xl-4">
-                                    <img src="/img/news/test.jpg" alt="..." class="object-fit-cover h-100 w-100">
-                                </div>
-                                <div class="d-flex flex-wrap col-12 col-lg-6 col-xl-8">
-                                    <span class="mx-3 textAverageOrange">Крутая новость</span>
-                                    <span class="mx-3 textSmall">"Типография 'Корвус' рада сообщить о возможности расширения своего ассортимента печатной продукции. Теперь у нас доступны новые дизайны и материалы для печати, которые помогут каждому клиенту подчеркнуть свою индивидуальность и оригинальность. Заказывайте у нас печать и получайте качественные и стильные изделия, которые будут радовать вас и ваших клиентов!"</span>
-                                    <div class="d-flex justify-content-end col-12">
-                                        <div class="d-flex align-self-end me-3">
-                                            <span class="textTiny">14.07.2024</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div data-hash="news4" class="swiper-slide">
-                            <div class="d-flex flex-wrap caseContentNews">
-                                <div class="d-flex col-12 col-lg-6 col-xl-4">
-                                    <img src="/img/news/test.jpg" alt="..." class="object-fit-cover h-100 w-100">
-                                </div>
-                                <div class="d-flex flex-wrap col-12 col-lg-6 col-xl-8">
-                                    <span class="mx-3 textAverageOrange">Крутая новость</span>
-                                    <span class="mx-3 textSmall">"К сожалению, из-за технических проблем типография 'Корвус' временно приостанавливает прием заказов. Мы прилагаем все усилия для устранения неполадок и надеемся возобновить работу в ближайшее время. Приносим свои извинения за доставленные неудобства и благодарим за понимание."</span>
-                                    <div class="d-flex justify-content-end col-12">
-                                        <div class="d-flex align-self-end me-3">
-                                            <span class="textTiny">14.07.2024</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div data-hash="news5" class="swiper-slide">
-                            <div class="d-flex flex-wrap caseContentNews">
-                                <div class="d-flex col-12 col-lg-6 col-xl-4">
-                                    <img src="/img/news/test.jpg" alt="..." class="object-fit-cover h-100 w-100">
-                                </div>
-                                <div class="d-flex flex-wrap col-12 col-lg-6 col-xl-8">
-                                    <span class="mx-3 textAverageOrange">Новость</span>
-                                    <span class="mx-3 textSmall"></span>
-                                    <div class="d-flex justify-content-end col-12">
-                                        <div class="d-flex align-self-end me-3">
-                                            <span class="textTiny">14.07.2024</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div data-hash="news6" class="swiper-slide">
-                            <div class="d-flex flex-wrap caseContentNews">
-                                <div class="d-flex col-12 col-lg-6 col-xl-4">
-                                    <img src="/img/news/test.jpg" alt="..." class="object-fit-cover h-100 w-100">
-                                </div>
-                                <div class="d-flex flex-wrap col-12 col-lg-6 col-xl-8">
-                                    <span class="mx-3 textAverageOrange">Новость</span>
-                                    <span class="mx-3 textSmall"></span>
-                                    <div class="d-flex justify-content-end col-12">
-                                        <div class="d-flex align-self-end me-3">
-                                            <span class="textTiny">14.07.2024</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div> -->
                     </div>
 
                     <!-- Буллеты/Прогрессбар -->
